@@ -1,0 +1,287 @@
+---
+title: "Config"
+summary: "Once UI is an open-source design system built for indie creators, small teams, and startups to fuel the next generation of web applications."
+updatedAt: "2025-05-04"
+navLabel: "Config"
+navIcon: "learn"
+---
+
+Once UI uses a config file to store app-level design configuration in a single place. You can change the fonts, colors, and more granular design preferences in the `app/resources/once-ui.config.js` file. This approach simplifies branding and help you maintain aeshetics between multiple Once UI apps.
+
+## Set fonts
+
+Once UI imports Geist and Geist Mono by default with [Next/font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts). To use a different font, simply change the imports and font declarations.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  highlight="1-2,4,10"
+  codes={[
+    {
+      code:
+`import { Geist } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+
+const primaryFont = Geist({
+    variable: "--font-primary",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const monoFont = Geist_Mono({
+    variable: "--font-code",
+    subsets: ["latin"],
+    display: "swap",
+});
+
+const font = {
+    primary: primaryFont,
+    secondary: primaryFont,
+    tertiary: primaryFont,
+    code: monoFont,
+}`,
+      language: "tsx",
+      label: "once-ui.config.js",
+    },
+  ]}
+/>
+
+## Style your app
+        
+Once UI uses data attributes to set color profiles, border radius style, themes, and other styling options. Data modes are inherited from the parent and can be applied to any
+semantic HTML element, providing simple, seamless style overrides.
+
+<CodeBlock
+    marginTop="8"
+    marginBottom="16"
+    codes={[
+  {
+    code:
+`theme:       'dark',         // dark | light
+neutral:     'gray',         // sand | gray | slate
+brand:       'blue',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+accent:      'indigo',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+solid:       'contrast',     // color | contrast
+solidStyle:  'flat',         // flat | plastic
+border:      'playful',      // rounded | playful | conservative
+surface:     'translucent',  // filled | translucent
+transition:  'all',          // all | micro | macro
+scaling:     '100',          // 90 | 95 | 100 | 105 | 110`, 
+    language: "tsx",
+    label: "src/app/resources/config.js"
+  }
+]} />
+
+<Feedback marginTop="16" marginBottom="24" icon
+  description={<>You can include the <InlineCode>StylePanel</InlineCode> and <InlineCode>StyleOverlay</InlineCode> components in your app to test and iterate between
+    different styles quickly.</>}/>
+
+<StylePanel marginBottom="40" />
+
+## Override styles
+
+Since data modes are inherited, it means you can nest them inside one-another, allowing
+you to have a dark-mode app with a light-mode header for example, or use rounded buttons
+in particular places in a generally sharp interface.
+
+Just add the `data-theme`, `data-neutral`, `data-brand`, `data-accent`, `data-border`, `data-surface`, `data-solid`, `data-solid-style`, `data-transition` or `data-scaling` attributes to any semantic HTML element to override its default style.
+
+<CodeBlock
+    preview={
+<Column
+    overflow="hidden"
+    data-theme="dark"
+    background="page"
+    border="neutral-medium"
+    radius="xl-8"
+    padding="8"
+    maxWidth={32}
+    maxHeight={44}
+  >
+    <Flex
+      fillWidth
+      horizontal="center"
+      position="absolute"
+      bottom="8"
+      zIndex={1}
+      data-theme="light"
+      data-border="rounded"
+      padding="8"
+    >
+      <Row maxWidth={20}
+        horizontal="space-between"
+        padding="8"
+        vertical="center"
+        background="neutral-weak"
+        border="neutral-medium"
+        radius="full">
+        <IconButton
+          variant="secondary"
+          tooltip="Home"
+          icon="home"
+        />
+        <IconButton variant="ghost" tooltip="Notifications" icon="notification" />
+        <IconButton variant="ghost" tooltip="Search" icon="search" />
+        <Avatar
+            src="/images/avatar.jpg"
+        />
+      </Row>
+    </Flex>
+    <Column fillHeight padding="m" gap="16" flex={1}>
+        <SegmentedControl
+          buttons={[
+            {
+              label: "For you",
+              value: "For you",
+            },
+            {
+              label: "Following",
+              value: "Following",
+            },
+            {
+              label: "Freelancing",
+              value: "Freelancing",
+            },
+            {
+              label: "Self",
+              value: "Self",
+            },
+            {
+              label: "Productivity",
+              value: "Productivity",
+            },
+            {
+              label: "Mental Health",
+              value: "Mental Health",
+            },
+            {
+              label: "Media",
+              value: "Media",
+            },
+          ]}
+          defaultSelected="For you"
+        />
+      <Column paddingX="8" paddingTop="20" paddingBottom="64" gap="48" flex={1}>
+        {[
+          {
+            name: "Lorant",
+            avatar: "/images/avatar.jpg",
+            title: "Launch your fully functional ecommerce store in an hour",
+            subtitle: "With the power of Fourthwall and flexibility of Once UI.",
+            date: "Jun 23",
+            likes: 48,
+            comments: 2,
+            topic: "Productivity",
+            topicLink: "",
+            imageSrc: "/images/docs/magic-store.jpg",
+          },
+          {
+            name: "Lorant",
+            avatar: "/images/avatar.jpg",
+            title: "Ship quality product docs without writing code",
+            subtitle: "Magic Docs is Once UI's mdx-based documentation template.",
+            date: "Jun 16",
+            likes: 31,
+            comments: 0,
+            topic: "Design",
+            topicLink: "",
+            imageSrc: "/images/docs/magic-docs.jpg",
+          },
+        ].map((article, index) => (
+          <Column key={index} fillWidth gap="12">
+            <User
+              name={article.name}
+              avatarProps={{
+                empty: false,
+                size: "s",
+                src: article.avatar,
+              }}
+            />
+            <Flex fillWidth gap="24" mobileDirection="column">
+              <Column gap="12">
+                <Text variant="heading-strong-l" onBackground="neutral-strong">
+                  {article.title}
+                </Text>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {article.subtitle}
+                </Text>
+              </Column>
+              <Flex minWidth={8} overflow="hidden" radius="m" border="neutral-medium" fitHeight>
+                <Media
+                  aspectRatio="3 / 2"
+                  alt="Image preview for article"
+                  sizes="120px"
+                  src={article.imageSrc}
+                />
+              </Flex>
+            </Flex>
+            <Flex gap="8" paddingTop="8" vertical="center">
+              <Icon size="xs" name="HiOutlineDocumentText" />
+              <Text variant="body-default-xs" onBackground="neutral-medium">
+                Because you follow{" "}
+                <SmartLink className="brand-on-background-weak" href={article.topicLink}>
+                  {article.topic}
+                </SmartLink>
+              </Text>
+            </Flex>
+            <Flex
+              vertical="center"
+              paddingTop="8"
+              textVariant="body-default-s"
+              onBackground="neutral-medium"
+            >
+              <Flex gap="32" fillWidth>
+                <Text>{article.date}</Text>
+                <Flex vertical="center" gap="8">
+                  <Icon size="s" name="like" />
+                  <Text>{article.likes}</Text>
+                </Flex>
+                <Flex vertical="center" gap="8">
+                  <Icon size="s" name="chat" />
+                  <Text>{article.comments}</Text>
+                </Flex>
+              </Flex>
+              <Flex gap="12">
+                <IconButton
+                  size="s"
+                  variant="ghost"
+                  icon="HiOutlineBookmark"
+                  tooltip="Save"
+                  tooltipPosition="top"
+                />
+                <IconButton
+                  size="s"
+                  variant="ghost"
+                  icon="HiMiniEllipsisVertical"
+                  tooltip="more"
+                  tooltipPosition="top"
+                />
+              </Flex>
+            </Flex>
+          </Column>
+        ))}
+      </Column>
+    </Column>
+  </Column>
+    }
+    highlight="2-3,5-6"
+    codes={[
+        {
+            code:
+`<Column
+    data-theme="dark"
+    data-border="playful">
+    <Row
+        data-theme="light"
+        data-border="rounded">
+        {children}
+    </Row>
+    <Row>
+        {children}
+    </Row>
+</Column>`,
+            language: "tsx",
+            label: "Example"
+        }
+    ]}
+/>

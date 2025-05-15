@@ -1,0 +1,391 @@
+---
+title: "Background"
+summary: "The Background component provides customizable decorative backgrounds with gradients, dots, grids, lines, and masking effects."
+updatedAt: "2025-05-08"
+navLabel: "Background"
+navIcon: "components"
+---
+
+A versatile component for creating decorative backgrounds with various visual effects. Commonly used to add visual interest to sections, cards, or containers while maintaining a clean and modern aesthetic.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Background
+      height="200px"
+      fillWidth
+      radius="m"
+      gradient={{ display: true, opacity: 0.5 }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="200px"
+  fillWidth
+  radius="m"
+  gradient={{ display: true, opacity: 0.5 }}
+/>`,
+      language: "tsx",
+      label: "Basic Background"
+    }
+  ]}
+/>
+
+## Gradient Background
+
+Create beautiful gradient backgrounds with customizable position, size, and colors.
+
+<CodeBlock
+  marginTop="16"
+  previewPadding="0"
+  marginBottom="24"
+  preview={
+    <Column fillWidth height={16}>
+      <Background
+        fill
+        gradient={{ 
+          display: true, 
+          opacity: 1,
+          x: 50,
+          y: 0,
+          colorStart: "brand-background-strong",
+          colorEnd: "accent-background-weak"
+        }}
+      />
+    </Column>
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="120px"
+  fillWidth
+  gradient={{ 
+    display: true, 
+    opacity: 0.8,
+    x: 30,
+    y: 50,
+    colorStart: "var(--color-brand-medium)",
+    colorEnd: "var(--color-success-medium)"
+  }}
+/>`,
+      language: "tsx",
+      label: "Gradient"
+    }
+  ]}
+/>
+
+## Dots Pattern
+
+Add a dotted pattern to your backgrounds with customizable size, color, and opacity.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  previewPadding="0"
+  preview={
+    <Background
+      height={16}
+      fillWidth
+      dots={{ 
+        display: true, 
+        opacity: 1,
+        size: "16",
+        color: "neutral-background-strong"
+      }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="200px"
+  fillWidth
+  radius="m"
+  dots={{ 
+    display: true, 
+    opacity: 0.5,
+    size: "16",
+    color: "brand-medium"
+  }}
+/>`,
+      language: "tsx",
+      label: "Dots Pattern"
+    }
+  ]}
+/>
+
+## Grid Pattern
+
+Create grid backgrounds with customizable color, opacity, and dimensions.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Background
+      height="200px"
+      fillWidth
+      radius="m"
+      grid={{ 
+        display: true, 
+        opacity: 0.3,
+        color: "neutral-medium",
+        width: "32px",
+        height: "32px"
+      }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="200px"
+  fillWidth
+  radius="m"
+  grid={{ 
+    display: true, 
+    opacity: 0.3,
+    color: "neutral-medium",
+    width: "32px",
+    height: "32px"
+  }}
+/>`,
+      language: "tsx",
+      label: "Grid Pattern"
+    }
+  ]}
+/>
+
+## Lines Pattern
+
+Add diagonal or straight lines to your backgrounds with customizable angle, thickness, and spacing.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Column fillWidth gap="16">
+      <Background
+        height="120px"
+        fillWidth
+        radius="m"
+        lines={{ 
+          display: true, 
+          opacity: 0.4,
+          size: "16",
+          thickness: 1,
+          angle: 45,
+          color: "brand-medium"
+        }}
+      />
+      <Background
+        height="120px"
+        fillWidth
+        radius="m"
+        lines={{ 
+          display: true, 
+          opacity: 0.4,
+          size: "24",
+          thickness: 2,
+          angle: -45,
+          color: "success-medium"
+        }}
+      />
+    </Column>
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="120px"
+  fillWidth
+  radius="m"
+  lines={{ 
+    display: true, 
+    opacity: 0.4,
+    size: "16",
+    thickness: 1,
+    angle: 45,
+    color: "brand-medium"
+  }}
+/>`,
+      language: "tsx",
+      label: "Lines Pattern"
+    }
+  ]}
+/>
+
+## Combining Effects
+
+Combine multiple background effects to create unique and visually interesting backgrounds.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Background
+      height="200px"
+      fillWidth
+      radius="m"
+      gradient={{ display: true, opacity: 0.3 }}
+      lines={{ 
+        display: true, 
+        opacity: 0.2,
+        size: "32",
+        thickness: 1,
+        angle: -45,
+        color: "neutral-strong"
+      }}
+      dots={{ 
+        display: true, 
+        opacity: 0.3,
+        size: "24",
+        color: "neutral-strong"
+      }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="200px"
+  fillWidth
+  radius="m"
+  gradient={{ display: true, opacity: 0.3 }}
+  lines={{ 
+    display: true, 
+    opacity: 0.2,
+    size: "32",
+    thickness: 1,
+    angle: -45,
+    color: "neutral-strong"
+  }}
+  dots={{ 
+    display: true, 
+    opacity: 0.3,
+    size: "24",
+    color: "neutral-strong"
+  }}
+/>`,
+      language: "tsx",
+      label: "Combined Effects"
+    }
+  ]}
+/>
+
+## Mask Effect
+
+Create a spotlight or reveal effect with the mask property.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Background
+      height="200px"
+      fillWidth
+      radius="m"
+      gradient={{ display: true, opacity: 0.7 }}
+      mask={{ x: 50, y: 50, radius: 100 }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<Background
+  height="200px"
+  fillWidth
+  radius="m"
+  gradient={{ display: true, opacity: 0.7 }}
+  mask={{ x: 50, y: 50, radius: 100 }}
+/>`,
+      language: "tsx",
+      label: "Mask Effect"
+    }
+  ]}
+/>
+
+## API reference
+
+### Background Props
+
+<PropsTable
+  content={[
+    ["gradient", "GradientProps", "{ }"],
+    ["dots", "DotsProps", "{ }"],
+    ["grid", "GridProps", "{ }"],
+    ["lines", "LinesProps", "{ }"],
+    ["mask", "MaskProps", "{ }"],
+    ["className"],
+    ["style"],
+    ["children"],
+    ["...flex"]
+  ]}
+/>
+
+### GradientProps
+
+<PropsTable
+  content={[
+    ["display", "boolean", "false"],
+    ["opacity", "number", "1"],
+    ["x", "number", "50"],
+    ["y", "number", "50"],
+    ["width", "number", "100"],
+    ["height", "number", "100"],
+    ["tilt", "number", "0"],
+    ["colorStart", "string", "var(--color-brand-medium)"],
+    ["colorEnd", "string", "var(--color-success-medium)"]
+  ]}
+/>
+
+### DotsProps
+
+<PropsTable
+  content={[
+    ["display", "boolean", "false"],
+    ["opacity", "number", "1"],
+    ["color", "string", "brand-on-background-weak"],
+    ["size", "SpacingToken", "24"]
+  ]}
+/>
+
+### GridProps
+
+<PropsTable
+  content={[
+    ["display", "boolean", "false"],
+    ["opacity", "number", "1"],
+    ["color", "string", "neutral-medium"],
+    ["width", "string", "32px"],
+    ["height", "string", "32px"]
+  ]}
+/>
+
+### LinesProps
+
+<PropsTable
+  content={[
+    ["display", "boolean", "false"],
+    ["opacity", "number", "1"],
+    ["size", "SpacingToken", "24"],
+    ["thickness", "number", "1"],
+    ["angle", "number", "0"],
+    ["color", "string", "neutral-medium"]
+  ]}
+/>
+
+### MaskProps
+
+<PropsTable
+  content={[
+    ["cursor", "boolean", "false"],
+    ["x", "number", "-"],
+    ["y", "number", "-"],
+    ["radius", "number", "50"]
+  ]}
+/>

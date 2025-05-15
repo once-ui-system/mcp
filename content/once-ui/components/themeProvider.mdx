@@ -1,0 +1,87 @@
+---
+title: "ThemeProvider"
+summary: "The ThemeProvider enables dynamic light, dark, and system themes by syncing user preferences with the `data-theme` attribute and exposing a global theme context."
+updatedAt: "2025-05-11"
+navLabel: "ThemeProvider"
+navIcon: "components"
+---
+
+Use `ThemeProvider` to persist user theme preferences and sync with the system’s light/dark setting. It provides a `useTheme` hook to manage theme state at runtime and sets `data-theme` on the `<html>` element.
+
+## Basic usage
+
+Wrap your app or layout with `ThemeProvider`:
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  codes={[
+    {
+      code:
+`<ThemeProvider>
+    <App />
+</ThemeProvider>`,
+      language: "tsx",
+      label: "ThemeProvider"
+    }
+  ]}
+/>
+
+Access and modify theme state with `useTheme`:
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  codes={[
+    {
+      code:
+`const { theme, setTheme, resolvedTheme } = useTheme();
+
+useEffect(() => {
+    console.log("Current theme:", resolvedTheme);
+}, [resolvedTheme]);`,
+      language: "tsx",
+      label: "useTheme"
+    }
+  ]}
+/>
+
+## Usage
+
+Visit the [ThemeSwitcher](/once-ui/components/themeSwitcher) page for an example of how to use `ThemeProvider`.
+
+## SSR hydration
+
+Inject this script into the `<head>` to set the initial theme before hydration:
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  codes={[
+    {
+      code:
+`<script dangerouslySetInnerHTML={{ __html: \`
+    (function() {
+      function getInitialTheme() {
+        try {
+          const saved = localStorage.getItem("theme");
+          if (saved === "system") {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          return saved || "dark";
+        } catch (e) {
+          return "dark";
+        }
+      }
+      document.documentElement.setAttribute("data-theme", getInitialTheme());
+    })();
+\` }} />`,
+      language: "js",
+      label: "Hydration script"
+    }
+  ]}
+/>
+
+## Behavior
+
+When the theme is set, it updates the `data-theme` attribute on the `<html>` element.

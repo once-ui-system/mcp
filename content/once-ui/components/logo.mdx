@@ -1,0 +1,178 @@
+---
+title: "Logo"
+summary: "A component for displaying brand logos with consistent styling and sizing options."
+updatedAt: "2025-05-09"
+navLabel: "Logo"
+navIcon: "components"
+---
+
+The Logo component is used to display brand logos with consistent styling and sizing. It supports displaying both an icon and a wordmark, either separately or together.
+
+<Feedback marginY="24" vertical="center" description={<Text>Replace the SVG files in the <InlineCode>public/trademark</InlineCode> folder with your own brand logo files. It will be used as the default logo and automatically render in the correct theme.</Text>}/>
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Column fillWidth center gap="40">
+      <Row gap="16" wrap center>
+        <Logo size="s" />
+        <Logo />
+        <Logo size="l" />
+      </Row>
+      <ThemeSwitcher/>
+    </Column>
+  }
+  codes={[
+    {
+      code:
+`<Logo size="s" />
+<Logo />
+<Logo size="l" />`,
+      language: "tsx",
+      label: "Logo"
+    }
+  ]}
+/>
+
+## Sizes
+
+The Logo component comes in different sizes to accommodate various use cases.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Column gap="16" center>
+      <Logo size="xs" />
+      <Logo size="s" />
+      <Logo size="m" />
+      <Logo size="l" />
+      <Logo size="xl" />
+    </Column>
+  }
+  codes={[
+    {
+      code:
+`<Logo size="xs" />
+<Logo size="s" />
+<Logo size="m" />
+<Logo size="l" />
+<Logo size="xl" />`,
+      language: "tsx",
+      label: "Sizes"
+    }
+  ]}
+/>
+
+## Icon only
+
+Display only the icon part of the logo.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row gap="16" center>
+      <Logo wordmark={false} />
+      <Logo wordmark={false} size="l" />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Logo wordmark={false} />
+<Logo wordmark={false} size="l" />`,
+      language: "tsx",
+      label: "Icon only"
+    }
+  ]}
+/>
+
+## Wordmark only
+
+Display only the wordmark part of the logo.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row gap="16" center>
+      <Logo icon={false} />
+      <Logo icon={false} size="l" />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Logo icon={false} />
+<Logo icon={false} size="l" />`,
+      language: "tsx",
+      label: "Wordmark only"
+    }
+  ]}
+/>
+
+## Custom source
+
+You can provide custom image sources for both the icon and wordmark.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row gap="16">
+      <Logo />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Logo 
+    iconSrc="/icon.svg" 
+    wordmarkSrc="/wordmark.svg" 
+/>`,
+      language: "tsx",
+      label: "Custom source"
+    }
+  ]}
+/>
+
+## As link
+
+The Logo component can function as a link when provided with an `href` property.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row gap="16" center>
+      <Logo href="/" />
+      <Logo href="/about" size="l" />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Logo href="/" />
+<Logo href="/about" size="l" />`,
+      language: "tsx",
+      label: "Links"
+    }
+  ]}
+/>
+
+## API reference
+
+<PropsTable
+  content={[
+    ["size", ["xs", "s", "m", "l", "xl"], "m"],
+    ["wordmark", "boolean", "true"],
+    ["icon", "boolean", "true"],
+    ["iconSrc", "string"],
+    ["wordmarkSrc", "string"],
+    ["href", "string"],
+    ["className"],
+    ["style"]
+  ]}
+/>

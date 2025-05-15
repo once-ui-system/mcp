@@ -1,0 +1,79 @@
+---
+title: "Icons"
+summary: "Once UI is an open-source design system built for indie creators, small teams, and startups to fuel the next generation of web applications."
+updatedAt: "2025-05-04"
+navLabel: "Icons"
+navIcon: "learn"
+---
+
+Include icons from any popular icon library in your project with <SmartLink suffixIcon="arrowUpRight" href="https://react-icons.github.io/react-icons/">`react-icons`</SmartLink>, which utilizes ES6 imports that allows you to include only the icons that your project
+is using.
+
+## Icon library
+
+All icons used in Once UI components (for example the chevron in the Select) are stored in
+a separate library file to allow quick and easy replacement of these icons. Simply change
+the imports and update the object values in the export.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  highlight="4,13"
+  codes={[
+  {
+    code:
+`import { IconType } from 'react-icons';
+
+import {
+    HiChevronDown,
+    HiChevronRight,
+    HiChevronLeft,
+    HiOutlineArrowPath,
+    HiCheck,
+    ...
+} from "react-icons/hi2";
+
+export const iconLibrary: Record<string, IconType> = {
+    chevronDown: HiChevronDown,
+    chevronRight: HiChevronRight,
+    chevronLeft: HiChevronLeft,
+    refresh: HiOutlineArrowPath,
+    check: HiCheck,
+    ...
+};
+
+export type IconLibrary = typeof iconLibrary;
+export type IconName = keyof IconLibrary;`,
+    language: "tsx",
+    label: "icons.ts",
+  }
+]} />
+
+## Icon component
+
+The <SmartLink suffixIcon="arrowUpRight" href="/once-ui/components/icon">`Icon`</SmartLink> component is a wrapper around icon instances to control their size and color. We recommend
+inserting icons through this component.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  codes={[
+    {
+      code:
+`<Icon
+    name="help"
+    onBackground="neutral-medium"
+    size="m"/>`,
+    language: "tsx",
+    label: "Example",}
+  ]}
+  preview={<Row gap="24" wrap>
+      <Icon name="rocket" size="m" />
+      <Icon name="close" size="m" />
+      <Icon name="check" size="m" />
+      <Icon name="info" size="m" />
+      <Icon name="warning" size="m" />
+      <Icon name="chevronDown" size="m" />
+      <Icon name="search" size="m" />
+    </Row>}
+/>

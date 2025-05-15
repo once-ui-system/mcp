@@ -1,0 +1,156 @@
+---
+title: "OgCard"
+summary: "A component that displays rich link previews with Open Graph metadata for URLs."
+updatedAt: "2025-05-09"
+navLabel: "OgCard"
+navIcon: "components"
+---
+
+The `OgCard` component displays rich link previews for URLs by fetching and rendering Open Graph metadata. It's perfect for showcasing external links with preview images, titles, and descriptions.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <OgCard 
+      url="https://once-ui.com"
+    />
+  }
+  codes={[
+    {
+      language: "tsx",
+      label: "OgCard",
+      code:
+`<OgCard 
+    url="https://once-ui.com"
+/>`,
+    }
+  ]}
+/>
+
+## Mock data
+
+Instead of fetching Open Graph data from a URL, you can directly provide the data to display.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <OgCard 
+      ogData={{
+        title: "Design Engineers Club",
+        description: "The Design Engineers Club is a community of vibe coders.",
+        image: "/images/docs/once-ui/vibe-coding-dark.jpg",
+        faviconUrl: "/images/avatar.jpg",
+        url: "https://designengineersclub.com"
+      }}
+    />
+  }
+  codes={[
+    {
+      code:
+`<OgCard 
+    ogData={{
+      title: "Design Engineers Club",
+      description: "The Design Engineers Club is a community of vibe coders.",
+      image: "/images/docs/once-ui/vibe-coding-dark.jpg",
+      faviconUrl: "/images/avatar.jpg",
+      url: "https://designengineersclub.com"
+    }}
+/>`,
+      language: "tsx",
+      label: "Mock data"
+    }
+  ]}
+/>
+
+## Direction
+
+The OgCard component supports different layout directions.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Column gap="16">
+      <OgCard 
+        url="https://once-ui.com/about"
+        direction="row"
+      />
+      <OgCard 
+        url="https://once-ui.com/products"
+        direction="row-reverse"
+      />
+    </Column>
+  }
+  codes={[
+    {
+      code:
+`<OgCard 
+    url="https://once-ui.com/about"
+    direction="row"
+/>
+
+<OgCard 
+    url="https://once-ui.com/products"
+    direction="row-reverse"
+/>`,
+      language: "tsx",
+      label: "Direction"
+    }
+  ]}
+/>
+
+## Card styling
+
+The `OgCard` extends the `Card` component, so you can use all `Card` props to customize its appearance.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <OgCard 
+      url="https://once-ui.com/customize"
+      background="brand-alpha-weak"
+      border="brand-alpha-medium"
+      shadow="l"
+    />
+  }
+  codes={[
+    {
+      code:
+`<OgCard 
+    ogData={{
+        title: "Styled Card",
+        description: "This card has custom styling applied to it.",
+        image: "/placeholder-image.jpg",
+        url: "https://example.com"
+    }}
+    direction="column"
+    background="brand-alpha-weak"
+    border="brand-alpha-medium"
+    shadow="l"
+/>`,
+      language: "tsx",
+      label: "Card styling"
+    }
+  ]}
+/>
+
+## API reference
+
+<PropsTable
+  content={[
+    ["url", "string"],
+    ["ogData", "{ title: string; description: string; image: string; url: string }"],
+    ["direction", ["column", "row", "column-reverse", "row-reverse"], "column"],
+    ["...card", "CardProps"]
+  ]}
+/>
+
+## Notes
+
+- Either `url` or `ogData` must be provided for the component to render
+- The component automatically fetches favicons for the domain
+- Images are proxied through an API endpoint to avoid CORS issues
+- If both `url` and `ogData` are provided, `ogData` takes precedence

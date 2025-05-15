@@ -1,0 +1,178 @@
+---
+title: "Select"
+summary: "Select provides a dropdown menu for choosing from a list of options with optional search functionality."
+updatedAt: "2025-05-12"
+navLabel: "Select"
+navIcon: "components"
+---
+
+The `Select` component offers a dropdown menu for selecting from a list of options. It's built on top of the `DropdownWrapper` and `Input` components, providing a consistent user experience with other form controls.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row fillWidth height={12} vertical="start">
+      <Select
+        id="basic-select"
+        label="Choose a country"
+        options={[
+          { label: "United States", value: "us" },
+          { label: "Canada", value: "ca" },
+          { label: "United Kingdom", value: "uk" },
+          { label: "Australia", value: "au" }
+        ]}
+      />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Select
+    id="basic-select"
+    label="Choose a country"
+    options={[
+      { label: "United States", value: "us" },
+      { label: "Canada", value: "ca" },
+      { label: "United Kingdom", value: "uk" },
+      { label: "Australia", value: "au" }
+    ]}
+/>`,
+      language: "tsx",
+      label: "Select"
+    }
+  ]}
+/>
+
+## Searchable
+
+Enable search functionality to filter options in large lists.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row fillWidth height={12} vertical="start">
+      <Select
+        id="searchable-select"
+        label="Choose a country"
+        searchable
+        options={[
+          { label: "United States", value: "us" },
+          { label: "Canada", value: "ca" },
+          { label: "United Kingdom", value: "uk" },
+          { label: "Australia", value: "au" },
+          { label: "Germany", value: "de" },
+          { label: "France", value: "fr" },
+          { label: "Japan", value: "jp" },
+          { label: "Brazil", value: "br" }
+        ]}
+      />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Select
+  id="searchable-select"
+  label="Choose a country"
+  searchable
+  options={[
+    { label: "United States", value: "us" },
+    { label: "Canada", value: "ca" },
+    { label: "United Kingdom", value: "uk" },
+    { label: "Australia", value: "au" },
+    { label: "Germany", value: "de" },
+    { label: "France", value: "fr" },
+    { label: "Japan", value: "jp" },
+    { label: "Brazil", value: "br" }
+  ]}
+/>`,
+      language: "tsx",
+      label: "Searchable"
+    }
+  ]}
+/>
+
+## Empty state
+
+Customize the message shown when no options match the search query.
+
+<CodeBlock
+  marginTop="16"
+  marginBottom="24"
+  preview={
+    <Row fillWidth height={12} vertical="start">
+      <Select
+        id="empty-state-select"
+        label="Choose a country"
+        searchable={true}
+        emptyState={
+          <Text onBackground="neutral-weak">
+            No matching countries found
+          </Text>
+        }
+        options={[
+          { label: "United States", value: "us" },
+          { label: "Canada", value: "ca" },
+          { label: "United Kingdom", value: "uk" },
+          { label: "Australia", value: "au" }
+        ]}
+      />
+    </Row>
+  }
+  codes={[
+    {
+      code:
+`<Select
+    id="empty-state-select"
+    label="Choose a country"
+    searchable={true}
+    emptyState={
+      <Text onBackground="neutral-weak">
+        No matching countries found
+      </Text>
+    }
+    options={[
+      { label: "United States", value: "us" },
+      { label: "Canada", value: "ca" },
+      { label: "United Kingdom", value: "uk" },
+      { label: "Australia", value: "au" }
+    ]}
+/>`,
+      language: "tsx",
+      label: "Empty State"
+    }
+  ]}
+/>
+
+## API reference
+
+<PropsTable
+  content={[
+    ["id", "string"],
+    ["label", "string"],
+    ["options", "SelectOptionType[]"],
+    ["value", "string", ""],
+    ["emptyState", "ReactNode", "No results"],
+    ["onSelect", "(value: string) => void"],
+    ["floatingPlacement", "Placement"],
+    ["searchable", "boolean", "false"],
+    ["minHeight", "SpacingToken"],
+    ["minWidth", "SpacingToken"],
+    ["maxWidth", "SpacingToken"],
+    ["className"],
+    ["style"],
+    ["...input"]
+  ]}
+/>
+
+### SelectOptionType
+
+<PropsTable
+  content={[
+    ["label", "ReactNode"],
+    ["value", "string"],
+    ["onClick", "(value: string) => void"]
+  ]}
+/>
