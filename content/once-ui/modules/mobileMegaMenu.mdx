@@ -1,20 +1,20 @@
 ---
-title: "MegaMenu"
-summary: "MegaMenu displays a top-level navigation bar with expandable dropdowns for organized access to grouped links. It supports dynamic sizing and contextual visibility."
+title: "MobileMegaMenu"
+summary: "MobileMegaMenu displays a top-level navigation bar with expandable dropdowns for organized access to grouped links. It supports dynamic sizing and contextual visibility."
 updatedAt: "2025-05-09"
-navLabel: "MegaMenu"
+navLabel: "MobileMegaMenu"
 navIcon: "modules"
 ---
 
-Use `MegaMenu` for complex navigational layouts where primary sections include sub-links, descriptions, and icons. Ideal for app headers and multi-level SaaS interfaces.
+Use `MobileMegaMenu` as the mobile counterpart to `MegaMenu`. It supports dynamic sizing, contextual visibility and content through the same API.
 
 <CodeBlock
   marginTop="16"
   marginBottom="24"
   codeHeight={24}
   preview={
-    <Row fillWidth height={20} overflow="hidden">
-    <MegaMenu
+    <Row fillWidth minHeight={20} overflow="hidden">
+    <MobileMegaMenu
       menuGroups={[
         {
       id: "products",
@@ -187,7 +187,7 @@ Use `MegaMenu` for complex navigational layouts where primary sections include s
   codes={[
     {
       code:
-`<MegaMenu
+`<MobileMegaMenu
     menuGroups={[
       {
         id: "products",
@@ -356,14 +356,14 @@ Use `MegaMenu` for complex navigational layouts where primary sections include s
     ]}
 />`,
       language: "tsx",
-      label: "Megamenu"
+      label: "MobileMegamenu"
     }
   ]}
 />
 
 ## Usage
 
-The `MegaMenu` component is designed for desktop screens. You can hide it at the medium breakpoint by adding the `hide="m"` prop directly to the component. Make sure you design a mobile navigation that works well with your app.
+The `MobileMegaMenu` component is designed for mobile screens. You can hide it at the large breakpoint by adding the `hide="l"` prop directly to the component. Make sure you design a desktop navigation that works well with your app.
 
 ## API reference
 

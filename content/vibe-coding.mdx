@@ -1,3 +1,11 @@
+---
+title: "Vibe Coding"
+updatedAt: "2025-06-03"
+summary: "Once UI is an agent-first AI design system that empowers indie creators to build responsive, high-quality apps effortlessly."
+image: "/images/docs/vibe-coding-dark.jpg"
+navIcon: "code"
+---
+
 ## About
 
 Once UI is an agent-first design system that empowers indie creators to build high-quality, responsive apps — without wrestling with complexity. Designed for AI-native workflows, it turns abstract intent into concrete interfaces with minimal syntax.
@@ -14,7 +22,10 @@ That said, most AI models aren’t yet as fluent in Once UI as they are with Tai
 
 If your repository includes Once UI components, you can guide AI with simple, natural prompts:
 
-> I want you to implement a feed view using the `@Grid` component. Use the `@Card` component for each feed item. The card should be column direction with an `@Avatar` in the header, a `@Text` containing the name, and another one for the date. The card should have a `@Media` for the image, and two `@Text` for the title and description.
+<Row fillWidth vertical="end" gap="12">
+    <Avatar size="s" src="/images/avatar.jpg" marginBottom="20"/>
+    > I want you to implement a feed view using the `@Grid` component. Use the `@Card` component for each feed item. The card should be column direction with an `@Avatar` in the header, a `@Text` containing the name, and another one for the date. The card should have a `@Media` for the image, and two `@Text` for the title and description.
+</Row>
 
 As you build more with Once UI, AI models will learn your patterns and start suggesting better code, faster. The more you rely on real usage, the less they hallucinate.
 
@@ -42,12 +53,18 @@ To configure it:
 3. Restart your IDE
 4. Run the following code:
 
-> get-library-docs /once-ui-system/mcp
+<Row fillWidth vertical="end" gap="12">
+  <Avatar size="s" src="/images/avatar.jpg" marginBottom="20"/>
+  > get-library-docs /once-ui-system/mcp
+</Row>
 
 This syncs the Once UI documentation with your local agent environment. To invoke the context, end your prompt with `use context7`.
 
 Example:
 
-> I want you to implement [...]. use context7
+<Row fillWidth vertical="end" gap="12">
+  <Avatar size="s" src="/images/avatar.jpg" marginBottom="20"/>
+  > I want you to implement [...]. use context7
+</Row>
 
 This lets your agent leverage the full Once UI system — even if it’s not installed locally.

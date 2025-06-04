@@ -60,35 +60,35 @@ We recommend using Once UI as a self-contained entity in your mono-repo structur
 <CodeBlock compact marginTop="16" codes={[
   {
     code:
-`.
-├── once-ui
-│   ├── tokens
-│   │   ├── index.scss
-│   │   └── ...
-│   ├── styles
-│   │   ├── index.scss
-│   │   └── ...
-│   ├── components
+`src/
+├── app/                  
+│   ├── (main)/          
+│   │   │   └── page.tsx
+│   │   ├── page-2/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   └── page.tsx     
+│   ├── config/          
+│   ├── utils/           
+│   └── styles/          
+│
+├── once-ui/             
+│   ├── styles/     
+│   │   ├── background.scss
+│   │   └── ...      
+│   │      
+│   ├── resources/            
+│   │   ├── config.js
+│   │   
+│   │
+│   ├── components/      
 │   │   ├── Accordion.tsx
 │   │   ├── Accordion.module.scss
-│   │   └── ...
-│   ├── types.ts
-│   └── icons.ts
-├── app-1
-│   ├── resources
-│   │   └── config.js
-│   ├── page 1
-│   │   └── page.tsx
-│   ├── page 2
-│   │   └── page.tsx
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── utils
-├── app-2
-│   └── ...
-├── next.config.js
-├── package.json
-└── tsconfig.json`,
+│   │   └── ...   
+│   │
+│   ├── types.ts      
+│   ├── icons.ts         
+└   └── interfaces.ts  `,
     language: "bash"
   }
 ]} />

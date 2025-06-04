@@ -3,7 +3,7 @@ title: "Select"
 summary: "Select provides a dropdown menu for choosing from a list of options with optional search functionality."
 updatedAt: "2025-05-12"
 navLabel: "Select"
-navIcon: "components"
+navIcon: "switch"
 ---
 
 The `Select` component offers a dropdown menu for selecting from a list of options. It's built on top of the `DropdownWrapper` and `Input` components, providing a consistent user experience with other form controls.
@@ -156,7 +156,7 @@ Customize the message shown when no options match the search query.
     ["value", "string", ""],
     ["emptyState", "ReactNode", "No results"],
     ["onSelect", "(value: string) => void"],
-    ["floatingPlacement", "Placement"],
+    ["placement", "Placement"],
     ["searchable", "boolean", "false"],
     ["minHeight", "SpacingToken"],
     ["minWidth", "SpacingToken"],
