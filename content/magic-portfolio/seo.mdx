@@ -16,7 +16,9 @@ Magic Portfolio automatically generates schema tags for your pages based on the 
 
 ## Open Graph image
 
-Social sharing images (open-graph and twitter) are automatically generated with `next/og`.
+You can change the social sharing image (open-graph and twitter) for the home page by replacing the `public/images/og/home.jpg` file.
+
+For all other routes, sharing images are automatically generated with `next/og`.
 
 <Feedback
     icon
@@ -35,7 +37,7 @@ Social sharing images (open-graph and twitter) are automatically generated with 
 `export async function generateMetadata() {
   const title = home.title;
   const description = home.description;
-  const ogImage = \`https://\${baseURL}/og?title=\${encodeURIComponent(title)}\`;
+  const ogImage = \`/api/og/generate-og?title=\${encodeURIComponent(title)}\`;
    ...
 };`,
         language: "tsx",

@@ -7,11 +7,8 @@ navIcon: "lightbulb"
 ---
 
 
-Once UI manages typography properties with utility classes that apply CSS variables under
-the hood. In most cases, we recommend using the `Text` and 
-`Heading` components. However, there might be cases when you would
-want to apply the utility class directly to an element, or modify the variables to fine
-tune certain properties.
+Once UI manages typography properties with the [`Text`](/once-ui/components/text) and 
+[`Heading`](/once-ui/components/heading) components. They apply utility classes and CSS variables under the hood. See the [Config](/once-ui/config) page for our recommended font setup.
 
 ## Font family
 
@@ -27,11 +24,11 @@ Add `font-family` classes to elements.
       { content: "Default" },
     ],
     rows: [
-      [".font-display", <InlineCode>var(--font-family-heading)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
-      [".font-heading", <InlineCode>var(--font-family-heading)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
-      [".font-body", <InlineCode>var(--font-family-body)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
-      [".font-label", <InlineCode>var(--font-family-label)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
-      [".font-code", <InlineCode>var(--font-family-code)</InlineCode>, <InlineCode>var(--font-code)</InlineCode>]
+      [".font-display", <InlineCode>var(--font-heading)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
+      [".font-heading", <InlineCode>var(--font-heading)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
+      [".font-body", <InlineCode>var(--font-body)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
+      [".font-label", <InlineCode>var(--font-label)</InlineCode>, <InlineCode>var(--font-primary)</InlineCode>],
+      [".font-code", <InlineCode>var(--font-code)</InlineCode>, <InlineCode>var(--font-code)</InlineCode>]
     ]
   }}
 />
@@ -80,8 +77,9 @@ Add `font-weight` classes to elements. The value adjusts to the adjacent or clos
 />
 
 ## Color
-          Learn about setting `color` properties in the
-          <SmartLink href="/once-ui/color#on-background">color documentation</SmartLink>.
+
+Learn about setting `color` properties in the
+<SmartLink href="/once-ui/color#on-background">color documentation</SmartLink>.
         
 ## Font scaling
 

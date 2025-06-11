@@ -2,6 +2,7 @@
 title: "Button"
 summary: "The Button component provides interactive elements for user actions with various styles, sizes, and states."
 updatedAt: "2025-05-05"
+github: "components/Button.tsx"
 navLabel: "Button"
 navIcon: "components"
 ---
@@ -295,7 +296,7 @@ Add an animated arrow that responds to hover events.
   ]}
 />
 
-## Justified content
+## Horizontal alignment
 
 Control the alignment of button content.
 
@@ -341,8 +342,8 @@ Override default styles with data attributes.
   preview={
     <Row wrap gap="16" horizontal="center">
       <Button data-border="rounded" size="s">Button</Button>
-      <Button data-border="rounded" data-solid="color" size="s">Button</Button>
-      <Button data-border="rounded" data-solid="inverse" data-brand="yellow" size="s">Button</Button>
+      <Button data-border="playful" data-solid="color" size="s">Button</Button>
+      <Button data-border="conservative" data-solid="inverse" data-brand="yellow" size="s">Button</Button>
     </Row>
   }
   codes={[
@@ -350,8 +351,8 @@ Override default styles with data attributes.
       code:
 `<Row wrap gap="16" horizontal="center">
     <Button data-border="rounded" size="s">Button</Button>
-    <Button data-border="rounded" data-solid="color" size="s">Button</Button>
-    <Button data-border="rounded" data-solid="inverse" data-brand="yellow" size="s">Button</Button>
+    <Button data-border="playful" data-solid="color" size="s">Button</Button>
+    <Button data-border="conservative" data-solid="inverse" data-brand="yellow" size="s">Button</Button>
 </Row>`,
       language: "tsx",
       label: "Data attributes"

@@ -2,6 +2,7 @@
 title: "InfiniteScroll"
 summary: "The InfiniteScroll component progressively loads content as the visitor scrolls."
 updatedAt: "2025-05-08"
+github: "components/InfiniteScroll.tsx"
 navLabel: "InfiniteScroll"
 navIcon: "components"
 navTag: "New"
@@ -24,36 +25,36 @@ The `InfiniteScroll` component provides an infinite scrollable container that pr
 import { InfiniteScroll, Flex } from "@once-ui/react";
 
 function InfiniteScrollExample() {
-  const [items, setItems] = useState(Array(5).fill(null).map((_, i) => i));
-  const [loading, setLoading] = useState(false);
-  
-  const loadMore = useCallback(async () => {
-    setLoading(true);
+    const [items, setItems] = useState(Array(5).fill(null).map((_, i) => i));
+    const [loading, setLoading] = useState(false);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const loadMore = useCallback(async () => {
+      setLoading(true);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      const lastItem = items[items.length - 1] || 0;
+      const newItems = Array(5).fill(null).map((_, i) => lastItem + i + 1);
+      
+      setItems(prev => [...prev, ...newItems]);
+      setLoading(false);
+      
+      // Return true if there are more items to load
+      return items.length < 50;
+    }, [items]);
     
-    const lastItem = items[items.length - 1] || 0;
-    const newItems = Array(5).fill(null).map((_, i) => lastItem + i + 1);
-    
-    setItems(prev => [...prev, ...newItems]);
-    setLoading(false);
-    
-    // Return true if there are more items to load
-    return items.length < 50;
-  }, [items]);
-  
-  return (
-    <InfiniteScroll
-      items={items}
-      loadMore={loadMore}
-      loading={loading}
-      threshold={200}
-      renderItem={(item) => (
-        <Flex key={item}/>
-      )}
-    />
-  );
+    return (
+      <InfiniteScroll
+        items={items}
+        loadMore={loadMore}
+        loading={loading}
+        threshold={200}
+        renderItem={(item) => (
+          <Flex key={item}/>
+        )}
+      />
+    );
 }`,
       language: "tsx",
       label: "InfiniteScroll"

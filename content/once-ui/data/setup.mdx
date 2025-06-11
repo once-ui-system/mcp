@@ -210,7 +210,7 @@ Render textual context above the chart with the `title` and `description` props.
 
 <Row fillWidth mobileDirection="column" gap="16" marginTop="16">
 <BarChart
-  data-viz="divergent"
+  data-viz-style="divergent"
   title="Wealth distribution"
   description="Global share of wealth held by Top 1% vs Bottom 99%"
   axis="none"
@@ -227,7 +227,7 @@ Render textual context above the chart with the `title` and `description` props.
 />
 
 <BarChart
-  data-viz="divergent"
+  data-viz-style="divergent"
   axis="none"
   legend={{
     position: "bottom-center"
@@ -367,7 +367,7 @@ Use the `legend` prop to control the visibility, position, and direction of the 
 
 <Row fillWidth mobileDirection="column" gap="16" marginTop="16">
   <PieChart
-    data-viz="sequential"
+    data-viz-style="sequential"
     title="Carbon Emission by Country"
     legend={{
       display: true,
@@ -388,7 +388,7 @@ Use the `legend` prop to control the visibility, position, and direction of the 
   />
 
   <PieChart
-    data-viz="sequential"
+    data-viz-style="sequential"
     title="Carbon Emission by Country"
     legend={{
       display: true,
@@ -673,7 +673,7 @@ Colors are assigned automatically. You can override them in the `series` prop.
 <LineChart
   marginTop="16"
   marginBottom="24"
-  data-viz="divergent"
+  data-viz-style="divergent"
   title="Tesla employee vs Elon Musk vs Hungary"
   description="Monthly compensation / state budget"
   axis="x"
@@ -698,12 +698,12 @@ Colors are assigned automatically. You can override them in the `series` prop.
   ]}
 />
 
-When using `data-viz="divergent"` or `data-viz="sequential"`, we recommend using the default colors, since they are distributed evenly.
+When using `data-viz-style="divergent"` or `data-viz-style="sequential"`, we recommend using the default colors, since they are distributed evenly.
 
 <LineChart
   marginTop="16"
   marginBottom="24"
-  data-viz="sequential"
+  data-viz-style="sequential"
   title="Tesla employee vs Elon Musk vs Hungary"
   description="Monthly compensation / state budget"
   axis="x"
@@ -737,7 +737,7 @@ When using `data-viz="divergent"` or `data-viz="sequential"`, we recommend using
     {
       code:
 `<LineChart
-    data-viz="divergent" // categorical | divergent | sequential
+    data-viz-style="divergent" // categorical | divergent | sequential
     title="Tesla employee vs Elon Musk vs Hungary"
     description="Monthly compensation / state budget"
     axis="x"

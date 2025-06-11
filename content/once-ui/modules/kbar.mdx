@@ -2,6 +2,7 @@
 title: "Kbar"
 summary: "The Kbar component provides a command palette for quick navigation and actions throughout your application using keyboard shortcuts."
 updatedAt: "2025-05-14"
+github: "modules/navigation/Kbar.tsx"
 navLabel: "Kbar"
 navIcon: "modules"
 ---
@@ -71,15 +72,15 @@ Each item in the command palette is defined by the `KbarItem` interface:
     {
       code:
 `interface KbarItem {
-  id: string;          // Unique identifier for the item
-  name: string;        // Display name in the command palette
-  section: string;     // Group name for organizing items
-  shortcut: string[];  // Keyboard shortcut keys
-  keywords: string;    // Search keywords
-  href?: string;       // Navigation URL (optional)
-  perform?: () => void; // Action to perform when selected (optional)
-  icon?: string;       // Icon name from Once UI icon set (optional)
-  description?: ReactNode; // Additional description (optional)
+    id: string;          // Unique identifier for the item
+    name: string;        // Display name in the command palette
+    section: string;     // Group name for organizing items
+    shortcut: string[];  // Keyboard shortcut keys
+    keywords: string;    // Search keywords
+    href?: string;       // Navigation URL (optional)
+    perform?: () => void; // Action to perform when selected (optional)
+    icon?: string;       // Icon name from Once UI icon set (optional)
+    description?: ReactNode; // Additional description (optional)
 }`,
       language: "tsx",
       label: "KbarItem"

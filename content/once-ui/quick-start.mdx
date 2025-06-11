@@ -17,78 +17,27 @@ Once UI is licensed under the MIT license.
 
 ## Quick start
 
-Create a new Once UI app with our CLI tool. It will clone the latest version and install the dependencies:
+Create a new Once UI app with our starter repository. It will install dependencies and set up the recommended structure:
 
-<CodeBlock compact marginBottom="16" codes={[
+<CodeBlock compact marginBottom="16"
+codes={[
   {
     code: "npx create-once-ui-app@latest my-app",
-    language: "bash"
-  }
-]} />
-
-Alternatively, you can clone the repository and install dependencies manually:
-
-<CodeBlock compact marginBottom="16" codes={[
+    language: "bash",
+    label: "CLI"
+  },
   {
     code: "git clone https://github.com/once-ui-system/nextjs-starter.git",
-    language: "bash"
+    language: "bash",
+    label: "Manual"
   }
 ]} />
 
-Install dependencies:
+Or add Once UI to an existing project:
 
 <CodeBlock compact marginBottom="16" codes={[
   {
-    code: "cd my-app && npm install",
-    language: "bash"
-  }
-]} />
-
-Start the local development server:
-
-<CodeBlock compact marginBottom="16" codes={[
-  {
-    code: "npm run dev",
-    language: "bash"
-  }
-]} />
-
-## Structure
-
-We recommend using Once UI as a self-contained entity in your mono-repo structure. Alternatively, if you're building a larger ecosystem, you can serve your own Once UI package through npm. We're planning to distribute Once UI as a package with the upcoming 1.0 version.
-
-<CodeBlock compact marginTop="16" codes={[
-  {
-    code:
-`src/
-├── app/                  
-│   ├── (main)/          
-│   │   │   └── page.tsx
-│   │   ├── page-2/
-│   │   │   └── page.tsx
-│   │   ├── layout.tsx
-│   │   └── page.tsx     
-│   ├── config/          
-│   ├── utils/           
-│   └── styles/          
-│
-├── once-ui/             
-│   ├── styles/     
-│   │   ├── background.scss
-│   │   └── ...      
-│   │      
-│   ├── resources/            
-│   │   ├── config.js
-│   │   
-│   │
-│   ├── components/      
-│   │   ├── Accordion.tsx
-│   │   ├── Accordion.module.scss
-│   │   └── ...   
-│   │
-│   ├── types.ts      
-│   ├── icons.ts         
-└   └── interfaces.ts  `,
+    code: "npm install @once-ui-system/core",
     language: "bash"
   }
 ]} />

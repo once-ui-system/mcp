@@ -2,6 +2,7 @@
 title: "CodeBlock"
 summary: "A versatile component for displaying and formatting code snippets with syntax highlighting, copy functionality, and interactive previews."
 updatedAt: "2025-05-14"
+github: "modules/code/CodeBlock.tsx"
 navLabel: "CodeBlock"
 navIcon: "modules"
 ---
@@ -281,7 +282,6 @@ Use the `highlight` prop to highlight specific lines of code. The value should b
     {
       code:
 `<CodeBlock
-		highlight="2,4-6"
 		codes={[
 			{
 				code:
@@ -296,11 +296,13 @@ for (let i = 0; i < items.length; i++) {
 return total;
 }",
 				language: "javascript",
+				highlight="2,4-6",
 				label: "Highlight"
 			}
 		]}
 />`,
       language: "tsx",
+      highlight: "2,4-6",
       label: "Highlight"
     }
   ]}
@@ -313,6 +315,8 @@ The `CodeBlock` component supports additional features like fullscreen mode and 
 <CodeBlock
   marginTop="16"
   marginBottom="24"
+  fullscreenButton
+  styleButton
   codes={[
     {
       code:
@@ -349,7 +353,6 @@ renderResults(data);",
     ["fullscreenButton", "boolean", "false"],
     ["compact", "boolean", "false"],
     ["lineNumbers", "boolean", "false"],
-    ["highlight", "string"],
     ["codeHeight", "number"],
     ["fillHeight", "boolean", "false"],
     ["previewPadding", "SpacingToken", "'l'"],

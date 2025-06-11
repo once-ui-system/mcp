@@ -1,6 +1,6 @@
 {
   "title": "Data-viz",
-  "order": 5,
+  "order": 6,
   "pages": {
     "setup": 1,
     "lineChart": 2,

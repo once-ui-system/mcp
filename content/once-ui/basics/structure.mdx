@@ -133,13 +133,13 @@ Rather than wrestling with `justifyContent` and `alignItems`, we use semantic `h
     {
       code:
 `<Column fillWidth minHeight={10}>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 <Column fillWidth center minHeight={10}>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 <Column fillWidth horizontal="end" vertical="end" minHeight={10}>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 `,
       language: "tsx",
@@ -178,11 +178,11 @@ We can also use `space-around` and `space-between` values for the alignment prop
       code:
 `<Column fillWidth horizontal="space-between">
     <IconButton icon="chevronLeft"/>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 <Column fillWidth horizontal="center" vertical="space-around">
     <IconButton icon="chevronLeft"/>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 `,
       language: "tsx",
@@ -222,10 +222,10 @@ Use `fit`, `fitWidth`, `fitHeight` to apply `fit-content`.
     {
       code:
 `<Column fit>
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 <Column fillWidth fitHeight horizontal="center">
-    <Button>Continue</Button>
+    <Button label="Continue"/>
 </Column>
 `,
       language: "tsx",
@@ -636,7 +636,8 @@ The surface properties are designed for large layout container elements such as 
         horizontal="space-between"
         vertical="center"
       >
-        <Logo size="xs" icon={false}/>
+        <Logo size="xs" className="dark-flex" wordmark="/trademark/type-dark.svg" href="/"/>
+        <Logo size="xs" className="light-flex" wordmark="/trademark/type-light.svg" href="/"/>
         <Avatar
           size="m"
           src="/images/avatar.jpg"
@@ -694,7 +695,8 @@ The surface properties are designed for large layout container elements such as 
 `<Row
     background="surface"
     border="surface">
-    <Logo/>
+    <Logo className="dark-flex" wordmark="/trademark/type-dark.svg" size="s" href="/"/>
+            <Logo className="light-flex" wordmark="/trademark/type-light.svg" size="s" href="/"/>
     <Avatar/>
 </Row>`,
       language: "tsx",

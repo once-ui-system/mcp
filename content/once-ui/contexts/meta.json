@@ -1,0 +1,10 @@
+{
+  "title": "Contexts",
+  "order": 2,
+  "pages": {
+    "themeProvider": 1,
+    "dataThemeProvider": 2,
+    "iconProvider": 3,
+    "toastProvider": 4
+  }
+}

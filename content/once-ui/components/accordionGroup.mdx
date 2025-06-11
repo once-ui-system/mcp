@@ -2,6 +2,7 @@
 title: "AccordionGroup"
 summary: "The AccordionGroup component provides a container for multiple Accordion components with consistent styling and spacing."
 updatedAt: "2025-05-04"
+github: "components/AccordionGroup.tsx"
 navLabel: "AccordionGroup"
 navIcon: "components"
 ---
@@ -77,18 +78,11 @@ A container component that groups multiple Accordion components together with co
 
 ## AccordionItem
 
-<Table
+<PropsTable
   marginTop="16"
   marginBottom="24"
-  data={{
-    headers: [
-      { content: "Prop", key: "prop", sortable: true },
-      { content: "Type", key: "type" },
-      { content: "Description", key: "description" }
-    ],
-    rows: [
-      ["title", <InlineCode>ReactNode</InlineCode>, "The title or header content of the accordion item"],
-      ["content", <InlineCode>ReactNode</InlineCode>, "The content to be displayed when the accordion item is expanded"]
-    ]
-  }}
+  content={[
+    ["title", "ReactNode"],
+    ["content", "ReactNode"],
+  ]}
 />

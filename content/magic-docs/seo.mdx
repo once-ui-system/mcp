@@ -27,7 +27,7 @@ Social sharing images (open-graph and twitter) are automatically generated with 
 `export async function generateMetadata() {
   const title = home.title;
   const description = home.description;
-  const ogImage = \`https://\${baseURL}/og?title=\${encodeURIComponent(title)}\`;
+  const ogImage = \`/api/og/generate?title=\${encodeURIComponent(title)}\`;
    ...
 };`,
         language: "tsx",

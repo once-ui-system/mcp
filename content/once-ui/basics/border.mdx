@@ -6,9 +6,6 @@ navLabel: "Border"
 navIcon: "lightbulb"
 ---
 
-
-
-
 Shape language in design profoundly influences the style of an interface. For instance, a website employing a large border radius often appears more playful, whereas one with small borders and sharp corners tends to convey a more conservative feel.
 
 ## Shape style
@@ -230,8 +227,8 @@ Sets the `border-width` property.
   marginBottom="24"
   data={{
     headers: [
-      { content: "Class", key: "class", sortable: false },
-      { content: "Preview", key: "preview", sortable: false },
+      { content: "Class", key: "class-1", sortable: false },
+      { content: "Preview", key: "preview-1", sortable: false },
     ],
     rows: [
       [".border-1", <Flex width="64" height="20" border="neutral-strong" radius="xs"/>],
@@ -249,8 +246,8 @@ Sets the `border-style` property.
   marginBottom="24"
   data={{
     headers: [
-      { content: "Class", key: "class", sortable: false },
-      { content: "Preview", key: "preview", sortable: false },
+      { content: "Class", key: "class-2", sortable: false },
+      { content: "Preview", key: "preview-2", sortable: false },
     ],
     rows: [
       [".border-solid", <Flex width="64" height="20" border="neutral-strong" radius="xs"/>],
@@ -268,9 +265,9 @@ Sets the `border-color` property.
   marginBottom="24"
   data={{
     headers: [
-      { content: "Class", key: "class", sortable: false },
+      { content: "Class", key: "class-3", sortable: false },
       { content: "Value", key: "value", sortable: false },
-      { content: <Row gap="8"><Icon padding="2" name="dark" size="xs"/><Icon padding="2" name="light" size="xs"/></Row>, key: "preview", sortable: false },
+      { content: <Row gap="8" key="header-icons"><Icon padding="2" name="dark" size="xs"/><Icon padding="2" name="light" size="xs"/></Row>, key: "preview", sortable: false },
     ],
     rows: [
       // Generate rows for each color scheme and variant combination
@@ -289,8 +286,8 @@ Sets the `border-color` property.
           "strong",
         ].map(variant => [
           `.${scheme}-border-${variant}`,
-          <InlineCode>{`var(--${scheme}-border-${variant})`}</InlineCode>,
-          <Row gap="8">
+          <InlineCode key={`${scheme}-border-${variant}-code`}>{`var(--${scheme}-border-${variant})`}</InlineCode>,
+          <Row gap="8" key={`${scheme}-border-${variant}-preview`}>
             <Flex data-theme="dark" background="neutral-alpha-weak" border={`${scheme}-${variant}`} radius="xs" width="20" height="20"/>
             <Flex data-theme="light" background="neutral-alpha-weak" border={`${scheme}-${variant}`} radius="xs" width="20" height="20"/>
           </Row>
@@ -301,9 +298,9 @@ Sets the `border-color` property.
           "alpha-medium",
           "alpha-strong",
         ].map(variant => [
-          `.${scheme}-border-${variant}`,
-          <InlineCode>{`var(--${scheme}-border-${variant})`}</InlineCode>,
-          <Row gap="8">
+          `.${scheme}-alpha-${variant}`,
+          <InlineCode key={`${scheme}-alpha-${variant}-code`}>{`var(--${scheme}-border-${variant})`}</InlineCode>,
+          <Row gap="8" key={`${scheme}-alpha-${variant}-preview`}>
             <Flex data-theme="dark"  background="neutral-alpha-weak" border={`${scheme}-${variant}`} radius="xs" width="20" height="20"/>
             <Flex data-theme="light" background="neutral-alpha-weak" border={`${scheme}-${variant}`} radius="xs" width="20" height="20"/>
           </Row>

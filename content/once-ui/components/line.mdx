@@ -2,6 +2,7 @@
 title: "Line"
 summary: "A simple component for creating horizontal or vertical divider lines with consistent styling."
 updatedAt: "2025-05-09"
+github: "components/Line.tsx"
 navLabel: "Line"
 navIcon: "components"
 ---
@@ -21,9 +22,11 @@ The Line component is used to create horizontal or vertical divider lines with c
   codes={[
     {
       code:
-`<Line />
-<Text>Content between lines</Text>
-<Line />`,
+`<Column gap="24" fillWidth horizontal="center">
+    <Line />
+    <Text>Content between lines</Text>
+    <Line />
+</Column>`,
       language: "tsx",
       label: "Line"
     }

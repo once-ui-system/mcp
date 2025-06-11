@@ -2,6 +2,7 @@
 title: "LogoCloud"
 summary: "A component for displaying a collection of logos in a grid layout with optional rotation."
 updatedAt: "2025-05-09"
+github: "components/LogoCloud.tsx"
 navLabel: "LogoCloud"
 navIcon: "components"
 ---
@@ -12,31 +13,48 @@ The `LogoCloud` component is used to display a collection of logos in a grid lay
   marginTop="16"
   marginBottom="24"
   preview={
-    <LogoCloud 
-      logos={[
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" }
-      ]}
-      columns="2"
-      gap="16"
-      limit={4}
-    />
+    <>
+      <LogoCloud
+        dark
+        logos={[
+          { wordmark: "/trademark/type-dark.svg", size: "m" },
+          { wordmark: "/trademark/type-dark.svg", size: "m" },
+          { wordmark: "/trademark/type-dark.svg", size: "m" },
+          { wordmark: "/trademark/type-dark.svg", size: "m" },
+          { wordmark: "/trademark/type-dark.svg", size: "m" },
+          { wordmark: "/trademark/type-dark.svg", size: "m" }
+        ]}
+        columns="2"
+        gap="16"
+        limit={4}
+      />
+      <LogoCloud
+        light
+        logos={[
+          { wordmark: "/trademark/type-light.svg", size: "m" },
+          { wordmark: "/trademark/type-light.svg", size: "m" },
+          { wordmark: "/trademark/type-light.svg", size: "m" },
+          { wordmark: "/trademark/type-light.svg", size: "m" },
+          { wordmark: "/trademark/type-light.svg", size: "m" },
+          { wordmark: "/trademark/type-light.svg", size: "m" }
+        ]}
+        columns="2"
+        gap="16"
+        limit={4}
+      />
+    </>
   }
   codes={[
     {
       code:
 `<LogoCloud 
     logos={[
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" }
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" }
     ]}
     columns="2"
     gap="16"
@@ -48,49 +66,9 @@ The `LogoCloud` component is used to display a collection of logos in a grid lay
   ]}
 />
 
-## Custom logos
-
-You can customize each logo by passing Logo component props to the items in the logos array.
-
-<CodeBlock
-  marginTop="16"
-  marginBottom="24"
-  preview={
-    <LogoCloud 
-      logos={[
-        { size: "m", wordmark: false },
-        { size: "m", icon: false },
-        { size: "m", wordmark: false },
-        { size: "m", icon: false }
-      ]}
-      limit={4}
-      columns="4"
-      gap="16"
-    />
-  }
-  codes={[
-    {
-      code:
-`<LogoCloud 
-    logos={[
-        { size: "m", wordmark: false },
-        { size: "m", icon: false },
-        { size: "m", wordmark: false },
-        { size: "m", icon: false }
-    ]}
-    columns="4"
-    gap="16"
-    limit={4}
-/>`,
-      language: "tsx",
-      label: "Custom logos"
-    }
-  ]}
-/>
-
 ## Rotation
 
-When you have more logos than the limit allows, the LogoCloud will automatically rotate through them.
+When you have more logos than the limit allows, the LogoCloud will automatically rotate through them. If the limit equals the number of logos, rotation will be disabled.
 
 <CodeBlock
   marginTop="16"
@@ -98,15 +76,12 @@ When you have more logos than the limit allows, the LogoCloud will automatically
   preview={
     <LogoCloud 
       logos={[
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" }
+        { wordmark: "/trademark/type-dark.svg", size: "m" },
+        { wordmark: "/trademark/type-dark.svg", size: "m" },
+        { wordmark: "/trademark/type-dark.svg", size: "m" },
+        { wordmark: "/trademark/type-dark.svg", size: "m" },
+        { wordmark: "/trademark/type-dark.svg", size: "m" },
+        { wordmark: "/trademark/type-dark.svg", size: "m" }
       ]}
       limit={6}
       rotationInterval={3000}
@@ -119,15 +94,12 @@ When you have more logos than the limit allows, the LogoCloud will automatically
       code:
 `<LogoCloud 
     logos={[
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" },
-        { size: "m" }
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" },
+      { wordmark: "/trademark/type-dark.svg", size: "m" }
     ]}
     limit={6}
     rotationInterval={3000}
@@ -150,12 +122,15 @@ The LogoCloud component extends the Grid component, so you can use all Grid prop
   preview={
     <LogoCloud 
       logos={[
-        { size: "s" },
-        { size: "s" },
-        { size: "s" },
-        { size: "s" }
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" }
       ]}
-      columns="2"
+      columns="4"
+      mobileColumns="2"
       gap="24"
     />
   }
@@ -164,12 +139,15 @@ The LogoCloud component extends the Grid component, so you can use all Grid prop
       code:
 `<LogoCloud 
     logos={[
-        { size: "s" },
-        { size: "s" },
-        { size: "s" },
-        { size: "s" }
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" },
+        { wordmark: "/trademark/type-dark.svg", size: "s" }
     ]}
-    columns="2"
+    columns="4"
+    mobileColumns="2"
     gap="24"
 />`,
       language: "tsx",
